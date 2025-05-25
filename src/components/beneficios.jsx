@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
 import caixaMarcada from "../assets/caixaMarcada.webp";
+import sslCertificado from "../assets/sslCertificado.jpg";
+import garantia3anos from "../assets/garantia3anos.jpeg";
+import compraSegura from "../assets/compraSegura2.jpeg";
 
 export default function BeneficiosSection({ id }) {
   // Configuração para que os textos apareçam mais cedo
@@ -20,37 +24,8 @@ export default function BeneficiosSection({ id }) {
     <section
       id={id}
       ref={ref}
-      className="relative text-white bg-gradient-to-b from-[#1B0002] via-[#300305] to-[#4B0A0F] font-medium text-center flex flex-col items-center justify-around py-20 overflow-hidden"
+      className="relative text-white bg-gradient-to-b from-[#0f172b] via-[#120b45] to-[#1b1f42] font-medium text-center flex flex-col items-center justify-around py-20 overflow-hidden"
     >
-      {/* Bolas com Visual Melhorado */}
-      <div className="absolute inset-0 pointer-events-none -z-10">
-        {/* Camada de Bolas Maiores e Mais Visíveis */}
-        <div className="absolute top-[30%] left-[20%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#933D5E] to-[#7A1F3D] opacity-50 blur-[80px]"></div>
-        <div className="absolute top-[50%] left-[60%] w-[450px] h-[450px] rounded-full bg-gradient-to-br from-[#7A1F3D] to-[#6F2C3F] opacity-40 blur-[70px]"></div>
-
-        {/* Camada de Bolas Menores e Contrastantes */}
-        <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#8B3A3A] to-[#933D5E] opacity-60 blur-[50px]"></div>
-        <div className="absolute bottom-[20%] right-[30%] w-[350px] h-[350px] rounded-full bg-gradient-to-br from-[#933D5E] to-[#7A1F3D] opacity-50 blur-[60px]"></div>
-
-        {/* Camada de Bolas Pequenas e Brilhantes */}
-        <div className="absolute top-[70%] left-[10%] w-[150px] h-[150px] rounded-full bg-gradient-to-br from-[#933D5E] to-[#6F2C3F] opacity-70 blur-[30px]"></div>
-        <div className="absolute top-[20%] right-[20%] w-[200px] h-[200px] rounded-full bg-gradient-to-br from-[#8B3A3A] to-[#933D5E] opacity-60 blur-[40px]"></div>
-      </div>
-
-      {/* Cabeçalho com Animação */}
-      <motion.h1
-        className="font-bold text-[3vh] w-3/4 md:w-2/3"
-        initial={{ opacity: 0, y: 30 }}
-        animate={controls}
-        transition={{ duration: 1.5 }}
-      >
-        <span className="text-[3vh]">Esse manual lendário contém</span>
-        <span className="bg-pink-500 p-1 text-white mx-2">
-          os maiores segredos
-        </span>
-        do mundo <span className="text-pink-500">feminino</span>
-      </motion.h1>
-
       {/* Subtítulo com Animação */}
       <motion.h1
         className="text-[3vh] font-bold w-3/4 mt-8"
@@ -58,14 +33,32 @@ export default function BeneficiosSection({ id }) {
         animate={controls}
         transition={{ duration: 1.5, delay: 0.2 }}
       >
-        <span className="bg-red-500 p-1 text-white mx-2">Não é preciso</span>
-        ser bonito para atrair uma mulher. Se ainda acredita nisso, é porque
-        nunca entendeu como elas realmente funcionam, basta ver o tanto de feio
-        se dando bem por ai. Mulheres são{" "}
-        <span className="bg-red-500 p-1 text-white mx-2">
-          movidas por emoção
-        </span>{" "}
-        — e toda emoção tem gatilhos.
+        Eu <span className="text-lime-500">NAO SEI</span> como te convencer. Nao
+        tem como eu te provar, alem do que estou escrevendo. Mas saiba que estou
+        digitando da forma mais <span className="text-lime-500">AUTENTICA</span>{" "}
+        que eu consigo.
+      </motion.h1>
+      <motion.h1
+        className="text-[3vh] font-bold w-3/4 mt-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={controls}
+        transition={{ duration: 1.5, delay: 0.2 }}
+      >
+        Quero que NOTE, que eu estou{" "}
+        <span className="text-lime-500">tentando</span> fazer voce{" "}
+        <span className="text-lime-500">SENTIR</span> o meu esforco, para voce
+        entender, o quao <span className="text-lime-500">FODA</span> eu sou.
+      </motion.h1>
+      <motion.h1
+        className="text-[3vh] font-bold w-3/4 mt-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={controls}
+        transition={{ duration: 1.5, delay: 0.2 }}
+      >
+        Sim! O livro <span className="text-lime-500">É curto</span>, voce tera
+        ao todo <span className="text-lime-500">20 paginas de leitura</span>.{" "}
+        <br /> A leitura, eh dessa mesma forma,{" "}
+        <span className="text-lime-500">direta e BRUTAL.</span>
       </motion.h1>
 
       <motion.h1
@@ -74,18 +67,66 @@ export default function BeneficiosSection({ id }) {
         animate={controls}
         transition={{ duration: 1.5, delay: 0.4 }}
       >
-        Quando você aprende a identificar e acionar esses gatilhos, o poder da
-        atração <span className="text-red-500">deixa de ser um acaso...</span> e
-        passa a ser uma <span className="text-red-600">ESCOLHA SUA.</span>
+        Eu REDIGI, <span className="text-lime-500">CADA PALAVRA</span>, desse
+        livro. E nele esta um <span className="text-lime-500">MISTURADO</span>{" "}
+        de ideias, experiencias e conviccoes que eu adiquiri com a vida.
+      </motion.h1>
+      <motion.h1
+        className="text-[3vh] font-bold w-3/4 mt-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={controls}
+        transition={{ duration: 1.5, delay: 0.4 }}
+      >
+        E eu te <span className="text-lime-500">GARANTO</span> que se voce der
+        uma chance pra mim, voce <span className="text-lime-500">NAO VAI</span>{" "}
+        se arrepender. Eu vou <span className="text-lime-500">EXPLODIR</span> a
+        sua cabeca com conhecimento
       </motion.h1>
 
+      <motion.div
+        className="flex flex-col items-center gap-5 text-black w-3/4 bg-white h-auto p-3 rounded-xl shadow-lg shadow-lime-500 mt-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={controls}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <h1 className="text-3xl">
+          SIM! <br />
+          <span className="text-lime-500 font-extrabold text-nowrap">
+            G-A-R-A-N-T-I-A <br /> ETERNA
+          </span>
+        </h1>
+        <h2 className="text-xl w-3/4 text-center font-bold">
+          Como eu <span className="text-lime-500">JA</span> disse,{" "}
+          <span className="text-lime-500">sou eu mesmo quem fez o site</span>,
+          eu mesmo que{" "}
+          <span className="text-lime-500">configurei a area de pagameto</span>,
+          entao se voce COMPRAR E NAO GOSTAR, se voce sentiu que o dinheiro nao
+          valeu a pena e/ou foi desperdicado, envia um email para{" "}
+          <span className="text-sky-400">
+            {" "}
+            vendas1.0suporte1.0 <br />
+            @gmail.com
+          </span>
+          .
+        </h2>
+        <h3 className="w-3/4 text-xl font-bold">
+          No email me envie SEU{" "}
+          <span className="text-sky-400"> NOME, TELEFONE E CPF</span>, escreva
+          que quer o estorno da compra, e dentro de um dia eu farei para voce!
+        </h3>
+        <div className="flex items-center justify-around">
+          <img src={sslCertificado} alt="" className="size-20" />
+          <img src={garantia3anos} alt="" className="size-20" />
+          <img src={compraSegura} alt="" className="size-20" />
+        </div>
+      </motion.div>
       <motion.h2
         className="mt-10 mb-4"
         initial={{ opacity: 0, y: 30 }}
         animate={controls}
         transition={{ duration: 0.6, delay: 0.5 }}
       >
-        Afinal, quais são esses segredos?
+        Afinal, sobre o que eu escrevo no livro?
       </motion.h2>
 
       {/* Lista com Animação e Barra Horizontal */}
@@ -97,13 +138,12 @@ export default function BeneficiosSection({ id }) {
       >
         {[
           "Como corrigir o corpo, a voz e o olhar a seu favor.",
-          "O que ativa o desejo no cérebro feminino (segundo a neurociência).",
-          "Compreender os estímulos que despertam interesse.",
-          "Entenda como os ciclos hormonais afetam o comportamento feminino.",
-          "Descubra como interpretar sinais sutis e responder com confiança.",
-          "Conceitos de sociologia aplicados ao comportamento humano.",
-          "Criar uma presença marcante com autenticidade.",
-          "Conjunto de métodos eficazes para desenvolver sua comunicação social.",
+          "Te apresento uma poderosa filosofia de vida.",
+          "Desenho uma MAPA para a confiança.",
+          "Mostro um poder oculto da respiração.",
+          "Como gerir a sua disposição.",
+          "O impacto da alimentação na sua vida.",
+          "Avisos e conselhos para as pessoas que te seguirão na vida",
         ].map((texto, index) => (
           <motion.div
             key={index}
@@ -123,6 +163,9 @@ export default function BeneficiosSection({ id }) {
           </motion.div>
         ))}
       </motion.div>
+      <h1 className="text-[3vh] mt-10 font-bold text-nowrap">
+        ⬆️ LEIA ISSO SEU PREGUISOCO ⬆️
+      </h1>
     </section>
   );
 }

@@ -8,7 +8,7 @@ export default function ResumoCompra({
   descontoTotal,
 }) {
   return (
-    <section className="flex flex-col gap-2 justify-start items-center rounded-xl w-96 px-4 py-10 bg-orange-900 text-white shadow-md my-10 lg:my-0">
+    <section className="flex flex-col gap-2 justify-start items-center rounded-xl px-4 py-10 bg-orange-900 text-white shadow-md my-10 lg:my-0">
       <h1 className="font-bold text-2xl">Resumo da compra</h1>
 
       <div className="px-10 my-10 flex flex-col text-start w-full border-2 border-dotted border-neutral-100 rounded-lg py-5">

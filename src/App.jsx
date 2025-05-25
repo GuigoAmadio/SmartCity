@@ -7,16 +7,16 @@ function lazyWithPreload(factory) {
 }
 const LazyLandingPage = lazyWithPreload(() => import("./pages/landingPage"));
 const Checkout = lazy(() => import("./pages/checkout"));
-const Quiz = lazy(() => import("./pages/quiz"));
+const EntradaFranca = lazy(() => import("./pages/entradaFranca"));
 const MainPage = lazy(() => import("./pages/main"));
 
-export { LazyLandingPage }; // Exporta para uso no quiz
+export { LazyLandingPage }; // Exporta para uso no EntradaFranca
 
 export default function App() {
   return (
     <Suspense fallback={<div>Carregando Pagina...</div>}>
       <Routes>
-        <Route path="/" element={<Quiz />} />
+        <Route path="/" element={<EntradaFranca />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/landingPage" element={<LazyLandingPage />} />
         <Route path="/main" element={<MainPage />} />

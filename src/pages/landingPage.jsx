@@ -3,8 +3,6 @@ import OfertasSection from "../components/ofertas";
 import HeroSection from "../components/hero";
 import BeneficiosSection from "../components/beneficios";
 import ReceitasSection from "../components/receitas";
-import ComboEbooks from "../components/livros";
-import UrgenciaSection from "../components/urgencia";
 import ContatoSection from "../components/contato";
 import { registrarLog, enviarLogs } from "../utils/utils";
 
@@ -99,8 +97,6 @@ export default function LandingPage() {
       { id: "hero", nome: "Hero" },
       { id: "beneficios", nome: "Benefícios" },
       { id: "receitas", nome: "Receitas" },
-      { id: "ebooks", nome: "Ebooks" },
-      { id: "urgencia", nome: "Urgência" },
       { id: "ofertas", nome: "Ofertas" },
       { id: "contato", nome: "Contato" },
     ];
@@ -161,12 +157,12 @@ export default function LandingPage() {
 
   return (
     <div className="font-sans text-brown-800 bg-white overflow-hidden">
-      <div className="fixed top-0 w-full z-50 bg-orange-100 border-b border-orange-300 shadow text-sm md:text-base text-orange-800 py-2 px-4 font-medium flex justify-center items-center gap-5">
+      <div className="fixed top-0 w-full z-50 bg-lime-100 border-b border-lime-300 shadow text-sm md:text-base text-lime-600 py-2 px-4 font-medium flex justify-center items-center gap-5">
         <span className="font-bold text-black w-1/4 text-center">
-          🎈 Especial dia dos Namorados
+          👍 Aproveita o lancamento
         </span>
         <span className="font-bold text-center">Promoção válida por:</span>
-        <span className="px-3 py-1 rounded-full bg-white text-black font-bold shadow-sm">
+        <span className="px-3 py-1 rounded-full bg-white text-black font-bold shadow-sm text-center">
           ⏳ {formatarTempo(tempoRestante)}
         </span>
       </div>
@@ -174,8 +170,6 @@ export default function LandingPage() {
       <HeroSection id="hero" irParaCheckout={irParaCheckout} />
       <BeneficiosSection id="beneficios" />
       <ReceitasSection id="receitas" />
-      <ComboEbooks id="ebooks" />
-      <UrgenciaSection id="urgencia" />
       <OfertasSection id="ofertas" irParaCheckout={irParaCheckout} />
       <ContatoSection id="contato" irParaCheckout={irParaCheckout} />
     </div>

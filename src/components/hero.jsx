@@ -1,67 +1,38 @@
 import React, { useState } from "react";
 
-import ebookBiologico from "../assets/ebookBiologico.webp";
-import ebookSocial from "../assets/ebookSocial.webp";
-import ebookPrincipal from "../assets/ebookPrincipal.webp";
-import calcinha from "../assets/calcinha.webp";
+import capaLivro from "../assets/capaAA.png";
 
 export default function HeroSection({ id, irParaCheckout }) {
-
-
   return (
     <section
       id={id}
-      className="text-white relative bg-neutral-800 min-h-screen flex flex-col items-center text-center px-4 py-10"
+      className="text-white relative bg-slate-900 min-h-screen flex flex-col items-center text-center px-4 py-10"
     >
       <h1 className="mt-12 text-[4vh] md:text-[5vh] font-bold">
-        A atração não é sorte.<br></br>
+        Eu NAO VOU mentir para voce.<br></br>
       </h1>
       <p className="text-[3vh] w-3/4 md:w-1/2 font-bold">
-        <span className="text-red-600 font-extrabold">
-          Domine o jogo da atenção e do desejo
+        <span className="text-lime-600 font-extrabold">
+          Talvez eu nao seja ninguem, voce TEM que saber disso.
         </span>{" "}
-        e descubra o que acontece quando voce tem o{" "}
-        <span className="text-orange-600">controle</span> dela.
+        mas eh <span className="text-lime-600">INEXPLICAVEL</span> a atencao que
+        eu chamo, em QUALQUER lugar que eu vou.
       </p>
       <div className="relative flex justify-center items-center h-auto my-20">
         {/* Glow / Aura */}
-        <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-rose-800 to-orange-600 opacity-40 blur-2xl z-10"></div>
-
-        {/* Ovos laterais (atrás) */}
-        <img
-          src={ebookBiologico}
-          alt="Ovo esquerdo"
-          className="absolute left-1/2 -translate-x-[100%] top-1/2 -translate-y-1/2 w-[160px] md:w-[360px] z-10 -rotate-12"
-        />
-        <img
-          src={ebookSocial}
-          alt="Ovo direito"
-          className="absolute left-1/2 translate-x-[10%] top-1/2 -translate-y-1/2 w-[160px] md:w-[350px] z-10 rotate-12"
-        />
+        <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-lime-800 to-emerald-600 opacity-40 blur-2xl z-10"></div>
 
         {/* Ovo central (na frente) */}
         <img
-          src={ebookPrincipal}
+          src={capaLivro}
           alt="Ovo central"
           className="relative z-20 w-[200px] md:w-[400px]"
         />
       </div>
-
-      <button
-        onClick={() => {
-          irParaCheckout("Hero", "main,biologico,sociologico,pratico");
-        }}
-        className="mb-10 border-dashed border-2 bg-red-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl shadow-xl shadow-orange-800 transition duration-300 relative mt-6"
-      >
-        <img
-          src={calcinha}
-          className="animate-bounce absolute size-16 lg:size-28 lg:-top-24 -top-14 right-0 transform scale-x-[-1] Z-50"
-          alt=""
-        />
-        🔓 Quero aprender a ser sedutor
-      </button>
-
-      {/* Sessão 2: Reenforcement */}
+      <div>
+        <p className="font-bold text-2xl text-lime-500">CONTINUE LENDO⬇️</p>
+        <img src="" alt="" />
+      </div>
     </section>
   );
 }

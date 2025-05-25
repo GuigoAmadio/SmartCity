@@ -151,31 +151,6 @@ export function getCookie(name) {
   return match ? match[2] : null;
 }
 
-// ✅ Função para enviar as respostas usando sendBeacon
-// ✅ Função para enviar as respostas usando sendBeacon
-export function enviarRespostasComBeacon(novasRespostas) {
-  try {
-    const url =
-      "https://us-central1-stripepay-3c918.cloudfunctions.net/salvarRespostasQuiz";
-    const payload = {
-      respostas: novasRespostas,
-      timestamp: new Date().toISOString(),
-    };
-
-    if (enviarComBeaconOuFetch(url, payload)) {
-      console.log("🟢 Respostas enviadas com sucesso.");
-      localStorage.removeItem("respostasQuizTemp");
-      return true;
-    } else {
-      console.warn("❌ Falha ao enviar respostas.");
-      return false;
-    }
-  } catch (error) {
-    console.error("❌ Erro ao enviar respostas:", error);
-    return false;
-  }
-}
-
 function enviarComBeaconOuFetch(url, payload) {
   try {
     // Tenta enviar com sendBeacon se suportado

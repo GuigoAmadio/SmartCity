@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <head>
-      <script type="module">
-        import { logVisit, getBasicLogData } from "./src/utils.js";
+    <script type="module">
+      import { logVisit, getBasicLogData } from "./src/utils/utils.js";
 
-        (function () {
-          try {
-            // Coleta os dados básicos e envia o log
-            const data = getBasicLogData();
-            logVisit(data);
-            console.log("🚀 Log enviado com sucesso:", data);
-          } catch (e) {
-            console.error("❌ Erro ao enviar log:", e);
-          }
-        })();
-      </script>
-    </head>
-
+      (function () {
+        try {
+          // Coleta os dados básicos e envia o log
+          const data = getBasicLogData();
+          logVisit(data);
+          console.log("🚀 Log enviado com sucesso:", data);
+        } catch (e) {
+          console.error("❌ Erro ao enviar log:", e);
+        }
+      })();
+    </script>
     <script
       src="https://cdn.utmify.com.br/scripts/utms/latest.js"
       data-utmify-prevent-xcod-sck
@@ -55,9 +52,9 @@
     </script>
     <!-- End Meta Pixel Code -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/calcinha.png" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/parabens.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A arte da Psicologia</title>
+    <title>Como ser sociavel</title>
     <!-- SE QUISER VER O CONSOLE NO CELULAR, SOH LIGA ESSAS LINHAS   -->
     <!--   <script src="//cdn.jsdelivr.net/npm/eruda"></script>-->
     <!--    <script>-->

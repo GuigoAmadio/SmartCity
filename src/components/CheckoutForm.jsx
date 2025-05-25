@@ -1,6 +1,6 @@
 // CheckoutForm.js
 import React, { useState } from "react";
-import garantia from "../assets/garantia.webp";
+import garantia from "../assets/garantia30dias.png";
 import seguro from "../assets/seguro.png";
 import masterCard from "../assets/masterCard.png";
 import visa from "../assets/visa.jpeg";

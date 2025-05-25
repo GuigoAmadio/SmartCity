@@ -17,9 +17,9 @@ export default function ReceitasSection({ id }) {
 
   // Lista de textos para simplificar a estrutura
   const textos = [
-    "❌ Isso aqui não é um livro de cantadas! Estamos oferecendo conhecimento aprofundado sobre o comportamento humano.",
+    `Honestamente eu ja falei o que precisava. MAS se voce ainda nao sente tanta CONFIANCA para comprar o livro, vou explicar um pouco melhor meu objetivo com ele:`,
     "📚 Compreenda os códigos sociais, a linguagem não verbal e os sinais que realmente despertam atenção e conexão.",
-    "💭 Desenvolva sua percepção e aprenda o que influencia o interesse genuíno nelas.",
+    "💭 Desenvolva sua percepção e aprenda o que influencia o interesse genuíno.",
     "🧬 Entenda o poder do corpo no reconhecimento do seu valor e sua presença.",
     "👉 Este é um passo a passo para desenvolver segurança, carisma e influência real.",
   ];
@@ -28,7 +28,7 @@ export default function ReceitasSection({ id }) {
     <section
       id={id}
       ref={ref}
-      className="pt-14 pb-24 px-4 bg-neutral-800 text-center text-white"
+      className="pt-8 pb-24 px-4 bg-gradient-to-b from-[#1b1f42] via-[#120b45] to-[#0f172b] text-center text-white"
     >
       {/* Frase principal destacada */}
       <motion.h2

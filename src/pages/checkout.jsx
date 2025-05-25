@@ -1,12 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import CheckoutForm from "../components/CheckoutForm";
-import ProdutosCard from "../components/ProdutosCard";
 import ResumoCompra from "../components/ResumoCompra";
-import ebookPrincipal from "../assets/ebookPrincipal.webp";
-import ebookSocial from "../assets/ebookSocial.webp";
-import ebookTecnicas from "../assets/ebookTecnicas.webp";
-import ebookBiologico from "../assets/ebookBiologico.webp";
 import bau_checkout from "../assets/bau_checkout.png";
 import { enviarEventoPixel, registrarLog, enviarLogs } from "../utils/utils";
 
@@ -20,37 +15,6 @@ export default function Checkout() {
     soft_descriptor: "Manual",
   };
 
-  const todosProdutos = [
-    {
-      id: "main",
-      nome: "Manual Secreto da Seducao",
-      precoOriginal: 71.9,
-      precoAtual: 21.9,
-      imagem: ebookPrincipal,
-    },
-    {
-      id: "biologico",
-      nome: "Instinto de Seducao",
-      precoOriginal: 47.2,
-      precoAtual: 4.9,
-      imagem: ebookBiologico,
-    },
-    {
-      id: "sociologico",
-      nome: "Jogo Invisivel",
-      precoOriginal: 44.9,
-      precoAtual: 4.9,
-      imagem: ebookSocial,
-    },
-    {
-      id: "pratico",
-      nome: "Arsenal da Atracao",
-      precoOriginal: 45.9,
-      precoAtual: 4.9,
-      imagem: ebookTecnicas,
-    },
-  ];
-
   const [form, setForm] = useState({
     email: "",
     celular: "",
@@ -59,7 +23,6 @@ export default function Checkout() {
   });
 
   const inicio = useRef(Date.now());
-  const [produtosSelecionados, setProdutosSelecionados] = useState([]);
   const [orderID, setOrderID] = useState("");
   const [pagamentoStatus, setPagamentoStatus] = useState(null); // null | "loading" | "success" | "erro"
   const [qrCodeData, setQrCodeData] = useState(null);
@@ -117,25 +80,11 @@ export default function Checkout() {
       window.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
-  
 
   useEffect(() => {
     // ✅ Evita envio duplicado para o Pixel
     if (sessionStorage.getItem("pixelEnviado")) return;
     sessionStorage.setItem("pixelEnviado", "true");
-
-    // ✅ Configuração dos produtos selecionados no checkout
-    const produtosQuery = queryParams.get("produtos");
-    let selecionados = produtosQuery
-      ? produtosQuery
-          .split(",")
-          .filter((id) => todosProdutos.some((p) => p.id === id))
-      : [];
-
-    if (!selecionados.includes("main")) {
-      selecionados = ["main", ...selecionados];
-    }
-    setProdutosSelecionados(selecionados);
 
     // ✅ Configuração e disparo do Pixel
     const pixelScript = document.createElement("script");
@@ -145,37 +94,8 @@ export default function Checkout() {
     window.pixelId = "68103089634d3f0bac4be54a";
     document.head.appendChild(pixelScript);
 
-    enviarEventoPixel("ViewContent", totalAtual, selecionados);
+    enviarEventoPixel("ViewContent", 16.8, "social");
   }, []);
-
-  const alternarProduto = async (id) => {
-    const novoSelecionados = produtosSelecionados.includes(id)
-      ? produtosSelecionados.filter((p) => p !== id)
-      : [...produtosSelecionados, id];
-
-    setProdutosSelecionados(novoSelecionados);
-
-    // Cálculo direto dos produtos completos e total
-    const produtosCompletos = todosProdutos.filter((p) =>
-      novoSelecionados.includes(p.id)
-    );
-    const valorTotal = produtosCompletos.reduce(
-      (total, p) => total + p.precoAtual,
-      0
-    );
-
-    enviarEventoPixel("AddToCart", valorTotal, novoSelecionados);
-  };
-
-  const selecionados = todosProdutos.filter((p) =>
-    produtosSelecionados.includes(p.id)
-  );
-  const totalOriginal = selecionados.reduce(
-    (acc, p) => acc + p.precoOriginal,
-    0
-  );
-  const totalAtual = selecionados.reduce((acc, p) => acc + p.precoAtual, 0);
-  const descontoTotal = totalOriginal - totalAtual;
 
   const validarCampos = () => {
     const { email, celular, cpf, pagamento } = form;
@@ -232,7 +152,7 @@ export default function Checkout() {
     e.preventDefault();
     if (!validarCampos()) return;
 
-    enviarEventoPixel("InitiateCheckout", totalAtual, produtosSelecionados);
+    enviarEventoPixel("InitiateCheckout", 16.8, "social");
 
     // Bloquear múltiplas gerações de Pix por 2 minutos
     if (form.pagamento === "pix") {
@@ -264,9 +184,9 @@ export default function Checkout() {
           body: JSON.stringify({
             ...form,
             cvv: document.getElementById("cvv")?.value,
-            produtos: produtosSelecionados,
+            produtos: "social",
             token,
-            total: totalAtual,
+            total: "16.8",
             product: produtoPrincipal,
           }),
         }
@@ -277,7 +197,7 @@ export default function Checkout() {
       const processarSucesso = () => {
         setPagamentoStatus("success");
         window.history.replaceState({}, "", "?status=sucesso");
-        enviarEventoPixel("Purchase", totalAtual, produtosSelecionados);
+        enviarEventoPixel("Purchase", "16,8", "social");
       };
 
       if (form.pagamento === "pix" && json?.data?.pix_qrcode) {
@@ -376,32 +296,28 @@ export default function Checkout() {
     <div className="flex items-center flex-col lg:flex-row gap-10 min-h-screen bg-orange-950 p-4 md:p-10 z-20">
       <div className="relative flex flex-col items-center">
         <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r -left-16 -top-10 from-red-700 to-amber-700 opacity-70 blur-2xl z-10"></div>
-        <img src={bau_checkout} alt="" className="relative size-64 z-20 " />
+        <img
+          src={bau_checkout}
+          alt=""
+          className="relative h-auto size-52 z-20 "
+        />
         <h1 className="font-bold text-white text-2xl mx-2 text-center z-20 relative">
           Nem todos têm acesso ao que está aqui... Mas você está a um passo de
           descobrir.
         </h1>
       </div>
       <div className="flex flex-col gap-6 w-full lg:w-2/3 z-20 pt-8">
-        <div className="bg-orange-950 p-4 rounded-xl space-y-4">
-          <h2 className="text-xl text-orange-300 font-bold text-center">
-            Aproveite e leve também:
-          </h2>
-          <h2 className="text-md text-orange-300 font-bold text-center">
-            *Clique para adicionar ou remover do carrinho*
-          </h2>
-          <ProdutosCard
-            produtos={todosProdutos.filter((p) => p.id !== "main")}
-            produtosSelecionados={produtosSelecionados}
-            onToggle={alternarProduto}
-          />
-        </div>
-
         <ResumoCompra
-          selecionados={selecionados}
-          totalOriginal={totalOriginal}
-          totalAtual={totalAtual}
-          descontoTotal={descontoTotal}
+          selecionados={[
+            {
+              id: "social",
+              nome: "Como Ser Sociável?",
+              precoOriginal: 28.9,
+            },
+          ]}
+          totalOriginal={28.9}
+          totalAtual={16.8}
+          descontoTotal={12.1}
         />
       </div>
       <CheckoutForm
