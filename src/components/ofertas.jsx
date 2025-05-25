@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import ofertaAzul from "../assets/ofertaAzul.webp";
-import ebookBiologico from "../assets/ebookBiologico.webp";
-import ebookSocial from "../assets/ebookSocial.webp";
-import ebookTecnicas from "../assets/ebookTecnicas.webp";
-import ebookPrincipal from "../assets/ebookPrincipal.webp";
 
 export default function OfertasSection({ id, irParaCheckout }) {
   const generateBolas = () => {

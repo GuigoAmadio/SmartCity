@@ -26,9 +26,7 @@ export default function LandingPage() {
       tempoTotal,
     });
 
-    window.location.href = `/checkout?produtos=${encodeURIComponent(
-      produtos
-    )}&origem=${encodeURIComponent(origem)}`;
+    window.location.href = `/checkout?origem=${encodeURIComponent(origem)}`;
   };
 
   useEffect(() => {
@@ -60,7 +58,7 @@ export default function LandingPage() {
           ultimaSessao: ultimaSessao.current,
           tempoTotal,
         });
-        enviarLogs("quiz", "landingPage", "checkout");
+        enviarLogs("entradaFranca", "landingPage", "checkout");
         console.log("Usuário foi ao checkout e voltou, log registrado.");
       } else {
         // Usuário saiu sem ir ao checkout
@@ -69,7 +67,7 @@ export default function LandingPage() {
           ultimaSessao: ultimaSessao.current,
           tempoTotal,
         });
-        enviarLogs("quiz", "landingPage");
+        enviarLogs("entradaFranca", "landingPage");
         console.log("Usuário saiu sem ir ao checkout, log registrado.");
       }
     };

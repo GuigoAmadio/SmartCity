@@ -184,9 +184,9 @@ export default function Checkout() {
           body: JSON.stringify({
             ...form,
             cvv: document.getElementById("cvv")?.value,
-            produtos: "social",
+            produtos: ["social"],
             token,
-            total: "16.8",
+            total: 16.8,
             product: produtoPrincipal,
           }),
         }
@@ -197,7 +197,7 @@ export default function Checkout() {
       const processarSucesso = () => {
         setPagamentoStatus("success");
         window.history.replaceState({}, "", "?status=sucesso");
-        enviarEventoPixel("Purchase", "16,8", "social");
+        enviarEventoPixel("Purchase", 16.8, "social");
       };
 
       if (form.pagamento === "pix" && json?.data?.pix_qrcode) {
