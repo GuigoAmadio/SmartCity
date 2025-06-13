@@ -160,7 +160,9 @@ function HomePage() {
         <div className="flex justify-center mt-16">
           <a href="/projetos">
             <Link to="/projetos">
-              <button className="...">Ver nossos projetos</button>
+              <button className="bg-black w-52 h-10 rounded hover:scale-105 hover:bg-neutral-800 transition duration-300 text-white font-bold ">
+                Ver nossos projetos
+              </button>
             </Link>
           </a>
         </div>
