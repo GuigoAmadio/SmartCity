@@ -56,7 +56,7 @@ function HomePage() {
           onClick={() => navigate("/ChatPage")}
           className="w-48 px-8 py-3 rounded-lg text-white font-semibold bg-gradient-to-tr from-pink-400 to-blue-400 hover:brightness-90 transition duration-300 hover:scale-105 mb-8"
         >
-          LEIA MAIS
+          Leia Mais
         </button>
 
         <div className="flex gap-12 text-center">
