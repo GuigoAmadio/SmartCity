@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "./assets/PrediosLuzes.svg";
+import heroImage from "../assets/PrediosLuzes.svg";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
