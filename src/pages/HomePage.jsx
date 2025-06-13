@@ -31,7 +31,7 @@ function HomePage() {
 
       {/* Seção 1 - HERO */}
       <section
-        className="relative h-[90vh] flex flex-col justify-center items-center text-center p-8"
+        className="relative h-[80vh] flex flex-col justify-center items-center text-center p-8"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundRepeat: "no-repeat",

@@ -52,7 +52,7 @@ const ChatPage = () => {
       <div className="flex-1"></div>
 
       {/* Caixa de input centralizada */}
-      <div className="w-full max-w-xl mx-auto">
+      <div className="w-2/3 mx-auto">
         <div className="p-[1px] rounded-xl bg-gradient-to-tr from-pink-400 to-blue-400">
           <div className="bg-[#1E1E1E] border border-[#2A2A2A] rounded-xl p-4 flex flex-col space-y-3 transition-all">
             <textarea
