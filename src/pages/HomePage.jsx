@@ -1,6 +1,6 @@
 import React from "react";
 import heroImage from "../assets/PrediosLuzes.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -159,12 +159,9 @@ function HomePage() {
         </div>
         <div className="flex justify-center mt-16">
           <a href="/projetos">
-            <button
-              onClick={() => navigate("/projetos")}
-              className="px-4 py-2 rounded-full bg-gray-200 hover:bg-sky-200 transition duration-500 hover:scale-105 "
-            >
-              Ver nossos projetos
-            </button>
+            <Link to="/projetos">
+              <button className="...">Ver nossos projetos</button>
+            </Link>
           </a>
         </div>
       </section>
