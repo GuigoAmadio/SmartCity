@@ -8,14 +8,14 @@ function HomePage() {
   return (
     <div className="font-sans bg-gray-50 text-gray-900 overflow-x-hidden">
       {/* Navbar fixa */}
-      <nav className="flex items-center justify-between px-6 py-4 shadow-sm bg-white fixed top-0 w-full z-50">
+      <nav className="flex items-center gap-5 justify-between px-6 py-4 shadow-sm bg-white fixed top-0 w-full z-50">
         <div className="text-xl font-bold">Conecta SmartCity</div>
-        <div className="space-x-4">
+        <div className="space-x-4 space-y-4">
           <button className="px-4 py-2 rounded-full bg-gray-200 hover:bg-sky-200 transition duration-500 hover:scale-105 ">
             Colaboradoes
           </button>
           <button
-            onClick={() => navigate("/projetos")}
+            onClick={() => navigate("/ProjetosPage")}
             className="px-4 py-2 rounded-full bg-gray-200 hover:bg-sky-200 transition duration-500 hover:scale-105 "
           >
             Projetos
@@ -31,7 +31,7 @@ function HomePage() {
 
       {/* Seção 1 - HERO */}
       <section
-        className="relative h-[80vh] flex flex-col justify-center items-center text-center p-8"
+        className="relative flex flex-col justify-center items-center text-center px-4 pt-10 md:py-32 h-[90vh] md:h-[80vh]"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundRepeat: "no-repeat",
@@ -39,33 +39,39 @@ function HomePage() {
           backgroundPosition: "bottom",
         }}
       >
-        {/* Decoração */}
+        {/* Decoração luminosa */}
         <div className="absolute w-72 h-72 bg-purple-300 rounded-full opacity-20 top-10 -left-20 blur-3xl"></div>
 
-        <h1 className="text-5xl font-bold mb-6">
+        {/* Título com responsividade */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
           Unindo e transformando cidades
         </h1>
-        <p className="max-w-3xl text-lg mb-8">
+
+        {/* Parágrafo com responsividade */}
+        <p className="max-w-md sm:max-w-xl md:max-w-3xl text-base sm:text-lg mb-8">
           Na Conecta SmartCity, conectamos inovação, gestão pública e
           desenvolvimento urbano. Atuamos como ponte entre empresas e
           prefeituras, oferecendo consultoria estratégica, promovendo parcerias
           e captando recursos para impulsionar cidades mais inteligentes,
           sustentáveis e eficientes.
         </p>
+
+        {/* Botão Leia Mais */}
         <button
           onClick={() => navigate("/ChatPage")}
-          className="w-48 px-8 py-3 rounded-lg text-white font-semibold bg-gradient-to-tr from-pink-400 to-blue-400 hover:brightness-90 transition duration-300 hover:scale-105 mb-8"
+          className="w-48 px-8 py-3 rounded-lg text-white font-semibold bg-gradient-to-tr from-pink-400 to-blue-400 hover:brightness-90 transition duration-300 hover:scale-105 mb-12"
         >
           Leia Mais
         </button>
 
-        <div className="flex gap-12 text-center">
+        {/* Estatísticas */}
+        <div className="flex gap-8 text-center">
           <div>
-            <div className="text-3xl font-bold">100+</div>
+            <div className="text-xl md:text-5xl font-bold">15+</div>
             <div>PROJETOS</div>
           </div>
           <div>
-            <div className="text-3xl font-bold">70+</div>
+            <div className="text-xl md:text-5xl font-bold">11+</div>
             <div>PARCERIAS</div>
           </div>
         </div>
@@ -158,13 +164,12 @@ function HomePage() {
           </div>
         </div>
         <div className="flex justify-center mt-16">
-          <a href="/projetos">
-            <Link to="/projetos">
-              <button className="bg-black w-52 h-10 rounded hover:scale-105 hover:bg-neutral-800 transition duration-300 text-white font-bold ">
-                Ver nossos projetos
-              </button>
-            </Link>
-          </a>
+          <button
+            onClick={() => navigate("/ProjetosPage")}
+            className="bg-black w-52 h-10 rounded hover:scale-105 hover:bg-neutral-800 transition duration-300 text-white font-bold "
+          >
+            Ver nossos projetos
+          </button>
         </div>
       </section>
 

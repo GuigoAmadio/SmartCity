@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ChatPage from "./pages/ChatPage";
 import Layout from "./components/Layout";
+import ProjetosPage from "./pages/ProjetosPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
       {/* Rotas sem Navbar */}
       <Route path="ChatPage" element={<ChatPage />} />
+      <Route path="ProjetosPage" element={<ProjetosPage />} />
     </Routes>
   );
 }
